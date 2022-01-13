@@ -1,7 +1,8 @@
 
 const express = require('express');
 const router = express.Router();
-const userController = require('../controller/userController') // importing controller file which is having CRUD and other functions of db
+const userController = require('../controller/userController')
+const messageController = require('../controller/messageController')// importing controller file which is having CRUD and other functions of db
 
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
@@ -22,6 +23,17 @@ router.get('/get', userController.getUsers);
 
 // Post :: to create user in User db
 router.post('/createuser', userController.createUsers);
+
+
+// ----------------------------------------routes for messages-----------------------------------------------------------------------------------
+
+// Get :: to get all the messages from db
+router.get('/getmessages',messageController.getMessages)
+
+
+
+
+
 
 
 //exporting router file to be used in server.js
