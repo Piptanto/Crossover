@@ -17,22 +17,33 @@ const ObjectId = require("mongodb").ObjectId;
 // var auth = require('../middleware/authorization')
 
 
-// Get :: to get all the users from db
+// ----------------------------------------routes for User controller-----------------------------------------------------------------------------------
+
+// Get :: to get all the users from users collection
 router.get('/get', userController.getUsers);
 
 
-// Post :: to create user in User db
+// Post :: to create user in users collection
 router.post('/createuser', userController.createUsers);
 
 
-// ----------------------------------------routes for messages-----------------------------------------------------------------------------------
 
-// Get :: to get all the messages from db
+
+// ----------------------------------------routes for messages controller-----------------------------------------------------------------------------------
+
+// Get :: to get all the messages from messages collection
 router.get('/getmessages',messageController.getMessages)
 
+// Post:: to create message document
+router.post('/createmessages', messageController.createMessages)
+
+// Get :: to get messages of specific user from messages collection
+router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
 
-
+// Route path: /user/:userId(\d+)
+// Request URL: http://localhost:3000/user/42
+// req.params: {"userId": "42"}
 
 
 

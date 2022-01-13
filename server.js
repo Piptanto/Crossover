@@ -12,8 +12,7 @@ connectDB()
 // Import Routes
 const routes = require('./server/route/Routes')
 
-// Import Cookie Parser
-// var cookieParser = require('cookie-parser')
+
 
 //Middelwares
 

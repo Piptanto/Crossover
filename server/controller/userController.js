@@ -1,12 +1,9 @@
-// this file contains 'all the logic/functions
+// this file contains 'all the logic/functions for User Schema
 
 // Import Model/Schema
 const User = require('../models/UserSchema')
 
 const Message = require('../models/MessageSchema')
-
-
-
 
 
 // to get all users
@@ -20,18 +17,6 @@ getUsers = async (req, res) => {
 
 // to create User
 createUsers = async (req, res) => {  
-
-    // let NewUser = new User({
-    //     name: req.body.name,
-    //     email: req.body.email,
-    //     password: req.body.password,
-    //     role: req.body.role
-        
-    // }) 
-
-    // Above code can be written as below
-    
-    // const { username, password } = req.body   
 
     let NewUser = new User(req.body)    
 
