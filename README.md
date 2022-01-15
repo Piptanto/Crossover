@@ -56,14 +56,12 @@ Returns user whose user_id matches the ${id} provided in the URL as a single obj
 Adds a new user to the database. Requires username (UNIQUE), email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
 ```
 {
-	"username": "Lance Vance", //HAS TO BE UNIQUE!
-	"email": "lance@vance.com",
-	"password": "qwerty",
-	"profile_picture": ""
+	"username": "Lance Vance",            //HAS TO BE UNIQUE!
+	"password":"",                       //can be left empty
+	"profile_picture": "http://...."     //URL of a picture
  }
 
 ```
-will return you an HTTP status code of 200 and the following data:
 
 
 ## messages
