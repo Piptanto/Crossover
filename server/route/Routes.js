@@ -39,14 +39,16 @@ router.delete('/delete/user/:id', userController.deleteOneUser);
 // Get :: to get all the messages from messages collection
 router.get('/getmessages',messageController.getMessages)
 
-// Post:: to create message document
-router.post('/createmessages', messageController.createMessages)
+// Post:: to create message of specific user in messages collection
+// router.post('/createmessages', messageController.createMessages)
+router.post('/createmessages/user/:user', messageController.createMessages)
+
 
 // Get :: to get messages of specific user from messages collection
 router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
 // Delete :: to delete a message from messages collection  /delete/message/:id	
-router.delete('/delete/message/:id', messageController.deleteOneMessage);
+router.delete('/deletemessage/message/:id', messageController.deleteOneMessage);
 
 // // Update :: to update a message in messages collection  /update/message/:id	
 // router.get('/update/message/:id', messageController.updateOneMessage);

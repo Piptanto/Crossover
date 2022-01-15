@@ -13,17 +13,21 @@ getMessages = async (req, res) => {
 }
 
 
-// to create a Message
+// to create a Message for specific user id e.g.61e079ba31a4bb0e6a2d2c74
 createMessages = async (req, res) => {
+
     
-    let NewMessage = new Message(req.body)
+    const messageDoc = {
+        message: req.body.message,
+        user:req.params.user
+    }
 
+    console.log('messageDoc ', messageDoc)
     console.log(' req.body ', req.body)
-
-
-    //  1) Find the user which we get from body
-    // 2) Than extract object ID of that user
-    // 3) Assign the user: to that objectID
+    console.log('req.params', req.params)  
+    
+    let NewMessage = new Message(messageDoc) 
+    
 
     try {
 
@@ -71,10 +75,10 @@ getMessagesbyID = async (req, res) => {
     }
 }
  
-// to delete a message by Id  e.g. //_id 61e0a42c5e7aa5e9be9ccf7e
+// to delete a message by Id  e.g. //_id 61e2ce5aedd9663ae1303c3d
 deleteOneMessage = async (req, res) => {
 
-    console.log('req.params', req.params) 
+    console.log('req.params for deletion', req.params) 
     try {
            await Message.findByIdAndDelete( req.params.id , function (err, docs) {
                 if (err) {
@@ -86,10 +90,11 @@ deleteOneMessage = async (req, res) => {
                     console.log("Removed Message : ", docs);
                     res.send({success:'True',Message:'Message Deleted'})
                 }
-        } )
+        } ).clone()
      }
     catch (err) {
-          res.send({id:1,success:false,Message:'User Not Found'})
+        //   res.send({id:1,success:false,Message:'User Not Found'})
+        console.log('err in catch',err)
     }
 }
 
