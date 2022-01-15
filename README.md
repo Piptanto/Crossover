@@ -77,6 +77,7 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 
 URL	Method
 [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages)
+
 Returns all messages in the database as an array of objects.
 
 #### GET one message by id
@@ -95,6 +96,7 @@ Returns message whose message_id matches the ${id} provided in the URL.
 #### POST one message of a user
 
 [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user)
+
 Adds a new message to the database. Requires message, user_id. Example: POST-ing this data:
 ```
 {
@@ -107,6 +109,7 @@ Adds a new message to the database. Requires message, user_id. Example: POST-ing
 #### POST one message of ANONYMOUSLY
 
 [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages)
+
 Adds a new message to the database. Requires message. Example: POST-ing this data:
 ```
 {
@@ -119,6 +122,7 @@ Adds a new message to the database. Requires message. Example: POST-ing this dat
 #### DELETE one message by id
 
 [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) 
+
 Deletes message whose message_id matches the ${id} provided in the URL. Returns true
 
 
