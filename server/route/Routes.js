@@ -48,7 +48,9 @@ router.post('/createmessages/user/:user', messageController.createMessages)
 router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
 // Delete :: to delete a message from messages collection  /delete/message/:id	
+
 router.delete('/deletemessage/message/:id', messageController.deleteOneMessage);
+
 
 // // Update :: to update a message in messages collection  /update/message/:id	
 // router.get('/update/message/:id', messageController.updateOneMessage);

@@ -77,8 +77,10 @@ deleteOneUser = async (req, res) => {
 
     console.log('req.params', req.params) 
     try {
+
            await User.findByIdAndDelete( req.params.id , function (err, docs) {
-                if (err) {
+
+             if (err) {
                     console.log(err)
                     // res.send(err)
                      res.send({id:1,success:false,Message:'User Not Found'})

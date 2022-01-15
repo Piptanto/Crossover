@@ -28,6 +28,7 @@
 | Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)|
 | All messages belonging to one user | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user) |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
+| Delete user | Delete           | [https://crossover-twitter.herokuapp.com/delete/user/:id](https://crossover-twitter.herokuapp.com/delete/user/:id) |
 
  #### GET all users [user]
 Returns all users in the database as an array of objects.
@@ -50,8 +51,9 @@ Returns user whose user_id matches the ${id} provided in the URL as a single obj
    ```
 
 #### GET all messages belonging to one user
+[https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  Shows all the Messages that were Created by the user with the user ID matching is the URL
 
-#### POST one user
+#### Create one user
 [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) 
 Adds a new user to the database. Requires username (UNIQUE), password. profile_picture
 
@@ -63,7 +65,9 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
  }
 
 ```
-
+#### Delete one user
+[https://crossover-twitter.herokuapp.com/delete/user/:id](https://crossover-twitter.herokuapp.com/delete/user/:id)  
+Deletes the user whose ID is provided in the URL
 
 ## Messages
 
