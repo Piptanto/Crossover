@@ -38,7 +38,7 @@ Returns all users in the database as an array of objects.
 Returns user whose user_id matches the ${id} provided in the URL as a single object.
 [https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)
 
-**Example: https://crossover-twitter.herokuapp.com/get/user/61e079ce31a4bb0e6a2d2c75:**
+**Example:** https://crossover-twitter.herokuapp.com/get/user/61e079ce31a4bb0e6a2d2c75:
 
 ```
   {
