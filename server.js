@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express()
-// const cors = require("cors");
+const cors = require("cors");
 
 
 // Import DB
@@ -16,7 +16,7 @@ const routes = require('./server/route/Routes')
 
 //Middelwares
 
-// app.use(cors());
+app.use(cors());
 // app.use(cors({
 //     origin: 'http://localhost:3000',
 //     credentials:true,
@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(cookieParser())
+
 
 app.use("/",routes) // accessing Routes.js
 
@@ -40,6 +41,7 @@ if( process.env.NODE_ENV === 'production' ) {
         res.sendFile(path.resolve(__dirname, '/server', 'index.html'));
 
 })}
+
 
 // Listening Port
 

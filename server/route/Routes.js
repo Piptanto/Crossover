@@ -50,6 +50,8 @@ router.delete('/delete/message/:id', messageController.deleteOneMessage);
 
 // // Update :: to update a message in messages collection  /update/message/:id	
 // router.get('/update/message/:id', messageController.updateOneMessage);
+//GET:: to get a message by message id
+router.get('/getmessagesbyid/message/:message', messageController.getMessagebyMessageID)
 
 
 // Route path: /user/:userId(\d+)

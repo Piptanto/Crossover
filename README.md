@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-**1. Users**
+**1. Users ([click here][user])**
 
 * GET all users
 * GET one user by id
@@ -20,142 +20,113 @@
 
 
 
-## Users
+## Users [user]
 
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all Users | GET           | [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get) |
-| Get one User by ID users | GET           | [http://xxxxxxxxxxxx/uxsers/${id} |
-| All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
+| Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)|
+| All messages belonging to one user | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user) |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
-### GET all users
-URL	Method
-xxxxxxxxxxxx/users/	GET
+#### GET all users
 Returns all users in the database as an array of objects.
+[https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get)
 
-### GET one user by id
-URL	Method
-xxxxxx/users/${id}
-Returns user whose user_id matches the ${id} provided in the URL.
 
-Example: xxxxx/users/2 would return you:
+#### GET one user by id
+Returns user whose user_id matches the ${id} provided in the URL as a single object.
+[https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)
 
-{
-  "user_id": 2,
-  "username": "Jane Doe",
-  "email": "jane@doe.com",
-  "profile_picture": "http://placekitten.com/200/200",
-  "password": hgjsfl
-}
+**Example:** https://crossover-twitter.herokuapp.com/get/user/61e079ce31a4bb0e6a2d2c75:
 
-### GET all messages belonging to one user
-URL	Method
-xxxxxxxx/users/${id}/messages	GET
-Returns all messages for a user whose user_id matches the ${id} provided in the URL.
-
-Example: xxxxxxxxxxx/users/2/messages would return you an array, with every element being a message object:
-
-[
+```
   {
-    "username": "Jane Doe",
-    "user_id": 2,
-    "message_id": 3,
-    "message": "Trick served together birds ought Dory vest pages. There is only one Lord of the Ring.",
-    "date": "2021-11-06T08:14:06.599Z",
-    "image_url": "http://placekitten.com/200/200"
-  }
-]
+      "_id":"61e079ce31a4bb0e6a2d2c75",
+      "username":"Irene",
+      "password":"",
+      "profilPic":"https://photos.app.goo.gl/ufRYP8ZEpmSo26wv8"
+   }
+   ```
 
-### POST one user
-URL	Method
-xxxxxxxx/users/	POST
-Adds a new user to the database. Requires username, email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
+#### GET all messages belonging to one user
 
+#### POST one user
+[https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) 
+Adds a new user to the database. Requires username (UNIQUE), password. profile_picture
+
+```
 {
-	"username": "Lance Vance",
-	"email": "lance@vance.com",
-	"password": "qwerty",
-	"profile_picture": ""
+	"username": "Lance Vance",            //HAS TO BE UNIQUE!
+	"password":"",                       //can be left empty
+	"profile_picture": "http://...."     //URL of a picture
  }
-will return you an HTTP status code of 200 and the following data:
 
-{
-  "user_id": 13, //id is generated automatically
-  "username": "Lance Vance",
-  "email": "lance@vance.com",
-  "profile_picture": "https://placedog.net/200"
-}
-## messages
+```
+
+
+## Messages
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
-| ### GET one message by id | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
-| Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |x
-| Delete message |   DELETE    | [xxxxxxxxxxx/messages/${id} DELETE](xxxxxxxxxxx/messages/${id} DELETE) |
-### GET all messages
+| Get one message by ID | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/message/:message](https://crossover-twitter.herokuapp.com/getmessagesbyid/message/:message)|
+| Create new message by user ID | POST          | [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user) |
+| Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |
+| Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id)  |
+#### GET all messages
 
-URL	Method
-xxxxxxxxxx/messages/	GET
+[https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages)
+
 Returns all messages in the database as an array of objects.
 
-### GET one message by id
-
-URL	Method
-xxxxxxxxx/messages/${id}	GET
+#### GET one message by id
 Returns message whose message_id matches the ${id} provided in the URL.
 
-Example: xxxxxxxxxxxxxx/messages/2 would return you:
-
+**Example:** https://crossover-twitter.herokuapp.com/getmessagesbyid/message/61e076116a18ac312b073b4f would return you:
+```
 {
-  "username": "Elon Musk",
-  "message": "Trick served together birds ought Dory vest pages. There is only one Lord of the Ring.",
-  "date": "2021-11-06T08:14:06.599Z",
-  "image_url": "http://placekitten.com/200/200",
-  "message_id": 2
+  "_id": "547456245245",
+  "message": "Math is incredible like I absolutely do not have time to watch a 2 hour movie but I have more than enough time to watch four 30 minute shows.",
+  "userId": "61e076796a18ac312b073b50",                        // Provides the user ID
+  "comment":[""],
+  "timestamp":"2000-01-01T00:00:00.000Z",
+
 }
+```
+#### POST one message of a user
 
-### POST one message
+[https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user)
 
-URL	Method
-xxxxx/messages/	POST
-Adds a new message to the database. Requires message, user_id. image_url can be left empty, and will provide https://placedog.net/200 by default. user_idfor a message should match an actual user's user_id Example: POST-ing this data:
-
+  Adds a new message to the database. Requires message, user_id. Example: POST-ing this data:
+```
 {
 	"message": "Here's an example message being submitted",
-	"image_url": "",
-	"user_id": 4
+	"user": "rdg242oihrg345oi3"
+	
 }
-will return you an HTTP status code of 200 and the following data:
+```
 
+#### POST one message of ANONYMOUSLY
+
+[https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages)
+
+Adds a new message to the database. Requires message. Example: POST-ing this data:
+```
 {
-  "username": "John Doe", //username corresponding to the user_id
-  "message": "Here's an example message being submitted",
-  "date": "2021-11-06T12:07:39.507Z", //date is generated automatically
-  "image_url": "https://placedog.net/200",
-  "message_id": 9 //message_id is generated automatically
+	"message": "Here's an example message being submitted",
+	
+	
 }
+```
 
-### DELETE one message by id
+#### DELETE one message by id
 
-URL	Method
-xxxxxxxxxxx/messages/${id}	DELETE
+[https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) 
+
 Deletes message whose message_id matches the ${id} provided in the URL. Returns true
 
-## /me
 
-URL	Method
-xxxxxxxxxxxx/me/	GET
-Returns a random user from the database.
 
-### Pagination of messages
-URL	Method
-xxxxxxxxx/messages?page=1&rows=5	GET
-This will return an array of messages with a pagination. Using ?page in your query you can adjust from which page you are querying your messages.
 
-Using ?page=1&rows you can adjust how many messages you want to get per page. This requires ?page to be used. Having just ?rows will be ignored and instead return you all messages.
 
-For example, getting 5 messages per page would have a query like this:
 
-URL	Method
-xxxxxxxxxxxxx/messages?page=1&rows=5	GET
