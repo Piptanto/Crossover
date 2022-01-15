@@ -49,8 +49,23 @@ createUsers = async (req, res) => {
 
 }
 
+// to get a user by Id  //_id 61e076796a18ac312b073b50
+getOneUser = async (req, res) => {
+
+    console.log('req.params', req.params)   
+    console.log('req.query',req.query)
+
+    const userData = await User.find({_id:req.params.id});
+    console.log('User by User ID : ', userData)
+    
+    if (userData) { res.send(userData) }
+    else res.send({success:false})
+
+ }
+
 
 module.exports = {
     getUsers,
-    createUsers
+    createUsers,
+    getOneUser
 }

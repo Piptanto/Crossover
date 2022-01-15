@@ -26,6 +26,10 @@ router.get('/get', userController.getUsers);
 // Post :: to create user in users collection
 router.post('/createuser', userController.createUsers);
 
+// Get :: to get a user from users collection  /get/user/:id	
+router.get('/get/user/:id', userController.getOneUser);
+
+
 
 
 
