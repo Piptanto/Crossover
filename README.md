@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-**1. Users**
+[**1. Users**][user]
 
 * GET all users
 * GET one user by id
@@ -20,7 +20,7 @@
 
 
 
-## Users
+## Users [user]
 
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
@@ -75,7 +75,6 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 | Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id)  |
 #### GET all messages
 
-URL	Method
 [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages)
 
 Returns all messages in the database as an array of objects.
