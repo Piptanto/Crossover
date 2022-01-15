@@ -29,12 +29,12 @@
 | All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
-### GET all users
+#### GET all users
 Returns all users in the database as an array of objects.
 [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get)
 
 
-### GET one user by id
+#### GET one user by id
 Returns user whose user_id matches the ${id} provided in the URL as a single object.
 [https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)
 
@@ -49,9 +49,9 @@ Returns user whose user_id matches the ${id} provided in the URL as a single obj
    }
    ```
 
-### GET all messages belonging to one user
+#### GET all messages belonging to one user
 
-### POST one user
+#### POST one user
 [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) 
 Adds a new user to the database. Requires username (UNIQUE), email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
 ```
@@ -75,13 +75,13 @@ will return you an HTTP status code of 200 and the following data:
 | Create new message by user ID | POST          | [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user) |
 | Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |
 | Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) |
-### GET all messages
+#### GET all messages
 
 URL	Method
 xxxxxxxxxx/messages/	GET
 Returns all messages in the database as an array of objects.
 
-### GET one message by id
+#### GET one message by id
 
 URL	Method
 xxxxxxxxx/messages/${id}	GET
@@ -97,7 +97,7 @@ Example: xxxxxxxxxxxxxx/messages/2 would return you:
   "message_id": 2
 }
 
-### POST one message
+#### POST one message
 
 URL	Method
 xxxxx/messages/	POST
@@ -118,7 +118,7 @@ will return you an HTTP status code of 200 and the following data:
   "message_id": 9 //message_id is generated automatically
 }
 
-### DELETE one message by id
+#### DELETE one message by id
 
 URL	Method
 xxxxxxxxxxx/messages/${id}	DELETE
@@ -126,18 +126,7 @@ Deletes message whose message_id matches the ${id} provided in the URL. Returns 
 
 ## /me
 
-URL	Method
-xxxxxxxxxxxx/me/	GET
-Returns a random user from the database.
+
 
 ### Pagination of messages
-URL	Method
-xxxxxxxxx/messages?page=1&rows=5	GET
-This will return an array of messages with a pagination. Using ?page in your query you can adjust from which page you are querying your messages.
 
-Using ?page=1&rows you can adjust how many messages you want to get per page. This requires ?page to be used. Having just ?rows will be ignored and instead return you all messages.
-
-For example, getting 5 messages per page would have a query like this:
-
-URL	Method
-xxxxxxxxxxxxx/messages?page=1&rows=5	GET
