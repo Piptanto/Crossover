@@ -65,7 +65,7 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 ```
 
 
-## messages
+## Messages
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
