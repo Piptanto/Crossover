@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(cookieParser())
 
+app.use(cors())
+
 app.use("/",routes) // accessing Routes.js
 
 app.use(express.static('server'));
@@ -38,6 +40,7 @@ if( process.env.NODE_ENV === 'production' ) {
         res.sendFile(path.resolve(__dirname, '/server', 'index.html'));
 
 })}
+
 
 // Listening Port
 
