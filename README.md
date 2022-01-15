@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [user] [Users] 
+**1. Users (click here  [user]) **
 
 * GET all users
 * GET one user by id
