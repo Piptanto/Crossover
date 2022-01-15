@@ -29,7 +29,8 @@ router.post('/createuser', userController.createUsers);
 // Get :: to get a user from users collection  /get/user/:id	
 router.get('/get/user/:id', userController.getOneUser);
 
-
+// Delete :: to delete a user from users collection  /delete/user/:id	
+router.delete('/delete/user/:id', userController.deleteOneUser);
 
 
 
@@ -44,6 +45,11 @@ router.post('/createmessages', messageController.createMessages)
 // Get :: to get messages of specific user from messages collection
 router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
+// Delete :: to delete a message from messages collection  /delete/message/:id	
+router.delete('/delete/message/:id', messageController.deleteOneMessage);
+
+// // Update :: to update a message in messages collection  /update/message/:id	
+// router.get('/update/message/:id', messageController.updateOneMessage);
 //GET:: to get a message by message id
 router.get('/getmessagesbyid/message/:message', messageController.getMessagebyMessageID)
 
