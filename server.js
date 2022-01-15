@@ -28,7 +28,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/",routes) // accessing Routes.js
 
+app.use(express.static('server'));
+
+if( process.env.NODE_ENV === 'production' ) {
+
+    const path = require('path');
+
+    app.get('/*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '/server', 'index.html'));
+
+})}
+
 // Listening Port
 
-const port = 8000
+const port = process.env.PORT || 8000
 app.listen(port, () => console.log('Server is UP: ' + port))
+
