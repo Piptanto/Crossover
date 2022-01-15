@@ -97,7 +97,7 @@ Returns message whose message_id matches the ${id} provided in the URL.
 
 [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user)
 
-Adds a new message to the database. Requires message, user_id. Example: POST-ing this data:
+  Adds a new message to the database. Requires message, user_id. Example: POST-ing this data:
 ```
 {
 	"message": "Here's an example message being submitted",
