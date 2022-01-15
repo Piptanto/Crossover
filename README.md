@@ -72,7 +72,7 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 | Get one message by ID | GET           | https://crossover-twitter.herokuapp.com/getmessages/message/:id|
 | Create new message by user ID | POST          | [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user) |
 | Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |
-| Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) |
+| Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id)  |
 #### GET all messages
 
 URL	Method
@@ -118,11 +118,9 @@ Adds a new message to the database. Requires message. Example: POST-ing this dat
 
 #### DELETE one message by id
 
-URL	Method
-xxxxxxxxxxx/messages/${id}	DELETE
+[https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) 
 Deletes message whose message_id matches the ${id} provided in the URL. Returns true
 
-## /me
 
 
 
