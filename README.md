@@ -76,16 +76,14 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 #### GET all messages
 
 URL	Method
-xxxxxxxxxx/messages/	GET
+[https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages)
 Returns all messages in the database as an array of objects.
 
 #### GET one message by id
-
-URL	Method
-xxxxxxxxx/messages/${id}	GET
+[https://crossover-twitter.herokuapp.com/getmessages/message/:id](https://crossover-twitter.herokuapp.com/getmessages/message/:id) 
 Returns message whose message_id matches the ${id} provided in the URL.
 
-Example: xxxxxxxxxxxxxx/messages/2 would return you:
+**Example:** xxxxxxxxxxxxxx/messages/2 would return you:
 
 {
   "username": "Elon Musk",
