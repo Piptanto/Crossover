@@ -30,8 +30,8 @@ router.post('/createuser', userController.createUsers);
 router.get('/get/user/:id', userController.getOneUser);
 
 // Delete :: to delete a user from users collection  /delete/user/:id
-// 61e2e9aaedd9663ae1303c46
-// 61e2e99fedd9663ae1303c45
+
+// 61e2f1a9edd9663ae1303c47
 router.delete('/delete/user/:id', userController.deleteOneUser);
 
 

@@ -72,7 +72,7 @@ getOneUser = async (req, res) => {
 
  }
  
- // to delete a user by Id  e.g. //_id 61e29a677481532338efd0eb
+ // to delete a user by Id  e.g. //_id 61e2f1a9edd9663ae1303c47
 deleteOneUser = async (req, res) => {
 
     console.log('req.params', req.params) 
