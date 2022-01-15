@@ -27,7 +27,7 @@
 | List all Users | GET           | [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get) |
 | Get one User by ID users | GET           | [http://xxxxxxxxxxxx/uxsers/${id} |
 | All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
-| Create new user | POST           | [https://crossover-twitter.herokuapp.com//createuser](https://crossover-twitter.herokuapp.com//createuser) |
+| Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
 ### GET all users
 URL	Method
