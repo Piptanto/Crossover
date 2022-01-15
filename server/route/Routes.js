@@ -29,7 +29,9 @@ router.post('/createuser', userController.createUsers);
 // Get :: to get a user from users collection  /get/user/:id	
 router.get('/get/user/:id', userController.getOneUser);
 
-// Delete :: to delete a user from users collection  /delete/user/:id	
+// Delete :: to delete a user from users collection  /delete/user/:id
+// 61e2e9aaedd9663ae1303c46
+// 61e2e99fedd9663ae1303c45
 router.delete('/delete/user/:id', userController.deleteOneUser);
 
 
@@ -47,7 +49,10 @@ router.post('/createmessages/user/:user', messageController.createMessages)
 // Get :: to get messages of specific user from messages collection
 router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
-// Delete :: to delete a message from messages collection  /delete/message/:id	
+// Delete :: to delete a message from messages collection  /delete/message/:id	61e079ba31a4bb0e6a2d2c74
+
+// 61e2d13d0654075c6920e108
+// 61e2cee2edd9663ae1303c3f
 router.delete('/deletemessage/message/:id', messageController.deleteOneMessage);
 
 // // Update :: to update a message in messages collection  /update/message/:id	
