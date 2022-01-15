@@ -53,7 +53,8 @@ Returns user whose user_id matches the ${id} provided in the URL as a single obj
 
 #### POST one user
 [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) 
-Adds a new user to the database. Requires username (UNIQUE), email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
+Adds a new user to the database. Requires username (UNIQUE), password. profile_picture
+
 ```
 {
 	"username": "Lance Vance",            //HAS TO BE UNIQUE!
