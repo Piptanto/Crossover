@@ -44,6 +44,9 @@ router.post('/createmessages', messageController.createMessages)
 // Get :: to get messages of specific user from messages collection
 router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
+//GET:: to get a message by message id
+router.get('/getmessagesbyid/message/:message', messageController.getMessagebyMessageID)
+
 
 // Route path: /user/:userId(\d+)
 // Request URL: http://localhost:3000/user/42

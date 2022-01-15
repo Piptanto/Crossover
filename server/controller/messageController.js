@@ -52,10 +52,32 @@ getMessagesbyID = async (req, res) => {
 
  }
 
+ //to get a message with a specific message id
+ getMessagebyMessageID = async (req, res) => {
+     
+    console.log('req.params', req.params)   
+    console.log('req.query',req.query)
+
+    try {
+
+    const messageByIdData = await Message.find({_id:req.params.message});
+    console.log('Messages by Message ID :', messageByIdData)
+    if (messageByIdData) { res.send(messageByIdData) }
+    else res.send({success:false})
+
+    } catch(error) {
+    
+console.log(error.message);
+res.status(404).send("failed");
+        
+ }
+ }
+
 module.exports = {
     getMessages,
     createMessages,
-    getMessagesbyID
+    getMessagesbyID,
+    getMessagebyMessageID
 }
 
 
