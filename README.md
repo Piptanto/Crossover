@@ -68,7 +68,9 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 ## Messages
 
 
-**Please note that there is a comment property, which is implemented for future use only**
+<span style="color:red">**Please note that there is a comment property, which is implemented for future use only**</span>
+
+
 
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
