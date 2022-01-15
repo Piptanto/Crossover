@@ -22,12 +22,12 @@ createUsers = async (req, res) => {
 
     console.log(' req.body received from Register Page: ', req.body)    
     
-
-    await User.findOne({ username: req.body.username },(err,doc) => {
+    try {
+        await User.findOne({ username: req.body.username },(err,doc) => {
             if (doc) {
                 console.log("data exist",doc);
-                res.send(`"User already exists in db :" ${doc}`);
-                
+               // res.send(`"User already exists in db :" ${doc}`);
+                res.send("User already exists")
                 // res.status(400).send({success: false})
                 //res.redirect('/')
             }
@@ -42,26 +42,36 @@ createUsers = async (req, res) => {
                 });
         }
         if (err) {
-            console.log('Error',err)
+            res.send({success:'false',message:'Not able to create User'})
         }        
         
-    }).clone()   
+    }).clone()  
+     }
+    catch(err){}
+
+     
 
 }
 
-// to get a user by Id  //_id 61e076796a18ac312b073b50
+// to get a user by Id  e.g. //_id 61e076796a18ac312b073b50
 getOneUser = async (req, res) => {
 
     console.log('req.params', req.params)   
-    console.log('req.query',req.query)
-
-    const userData = await User.find({_id:req.params.id});
-    console.log('User by User ID : ', userData)
+    // console.log('req.query',req.query)
+    try {
+        
+        const userData = await User.find({ _id: req.params.id });
+        console.log('User by User ID : ', userData)
     
-    if (userData) { res.send(userData) }
-    else res.send({success:false})
+        if (userData) { res.send(userData) }
+        else res.send({ success: false })
+    }  
+    catch (err) {
+        res.send({id:1,success:false})
+    }
 
  }
+ 
 
 
 module.exports = {
