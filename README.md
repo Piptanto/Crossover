@@ -25,29 +25,29 @@
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all Users | GET           | [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get) |
-| Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/user/:id](https://crossover-twitter.herokuapp.com/user/:id)|
+| Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)|
 | All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
 ### GET all users
-URL	Method
-xxxxxxxxxxxx/users/	GET
 Returns all users in the database as an array of objects.
+[https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get)
+
 
 ### GET one user by id
-URL	Method
-xxxxxx/users/${id}
-Returns user whose user_id matches the ${id} provided in the URL.
+Returns user whose user_id matches the ${id} provided in the URL as a single object.
+[https://crossover-twitter.herokuapp.com/get/user/:id](https://crossover-twitter.herokuapp.com/get/user/:id)
 
-Example: xxxxx/users/2 would return you:
+**Example: https://crossover-twitter.herokuapp.com/get/user/61e079ce31a4bb0e6a2d2c75:**
 
-{
-  "user_id": 2,
-  "username": "Jane Doe",
-  "email": "jane@doe.com",
-  "profile_picture": "http://placekitten.com/200/200",
-  "password": hgjsfl
-}
+```
+  {
+      "_id":"61e079ce31a4bb0e6a2d2c75",
+      "username":"Irene",
+      "password":"",
+      "profilPic":"https://photos.app.goo.gl/ufRYP8ZEpmSo26wv8"
+   }
+   ```
 
 ### GET all messages belonging to one user
 URL	Method
