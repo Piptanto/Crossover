@@ -2,14 +2,15 @@
 
 ## Table of Contents
 
-/users 
+**1. Users**
 
 * GET all users
 * GET one user by id
 * GET all messages belonging to one user
 * POST one user
+**/me - GET Random User**
 
-/messages
+**2. Messages**
 
 * GET all messages
 * GET one message by id
@@ -17,9 +18,16 @@
 * DELETE one message by id
 * Pagination of messages
 
-/me - GET Random User
 
-## users
+
+## Users
+
+| Function      | Method        | Link          |
+| ------------- | ------------- | ------------- |
+| List all Users | GET           | [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get) |
+| Get one User by ID users | GET           | [http://xxxxxxxxxxxx/uxsers/${id} |
+| All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
+| Create new user | POST           | [https://crossover-twitter.herokuapp.com//createuser](https://crossover-twitter.herokuapp.com//createuser) |
 
 ### GET all users
 URL	Method
@@ -79,7 +87,12 @@ will return you an HTTP status code of 200 and the following data:
   "profile_picture": "https://placedog.net/200"
 }
 ## messages
-
+| Function      | Method        | Link          |
+| ------------- | ------------- | ------------- |
+| List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
+| Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
+| Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |x
+| Delete message |   DELETE    | [xxxxxxxxxxx/messages/${id} DELETE](xxxxxxxxxxx/messages/${id} DELETE) |
 ### GET all messages
 
 URL	Method
