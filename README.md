@@ -90,9 +90,11 @@ will return you an HTTP status code of 200 and the following data:
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
-| Get one message by id | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
-| Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |x
-| Delete message |   DELETE    | [xxxxxxxxxxx/messages/${id} DELETE](xxxxxxxxxxx/messages/${id} DELETE) |
+| Get one message by id | GET           | [https://crossover-twitter.herokuapp.com/getmessages/message/:id](https://crossover-twitter.herokuapp.com/getmessages/message/:id)  |
+| Get one message by user id | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
+| Create new message by user ID | POST          | [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user) |
+| Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |
+| Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id) |
 ### GET all messages
 
 URL	Method
