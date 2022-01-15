@@ -80,39 +80,41 @@ URL	Method
 Returns all messages in the database as an array of objects.
 
 #### GET one message by id
-[https://crossover-twitter.herokuapp.com/getmessages/message/:id](https://crossover-twitter.herokuapp.com/getmessages/message/:id) 
 Returns message whose message_id matches the ${id} provided in the URL.
 
-**Example:** xxxxxxxxxxxxxx/messages/2 would return you:
-
+**Example:** xxxxxxxxxxxxxx/xxxx/xxxx would return you:
+```
 {
-  "username": "Elon Musk",
+  "_id": "547456245245",
   "message": "Trick served together birds ought Dory vest pages. There is only one Lord of the Ring.",
-  "date": "2021-11-06T08:14:06.599Z",
-  "image_url": "http://placekitten.com/200/200",
-  "message_id": 2
+  "user": "547456245245",                        // Provides the user ID
+  "timestamp": "2021-11-06T08:14:06.599Z",
+   "__v": 0
 }
+```
+#### POST one message of a user
 
-#### POST one message
-
-URL	Method
-xxxxx/messages/	POST
-Adds a new message to the database. Requires message, user_id. image_url can be left empty, and will provide https://placedog.net/200 by default. user_idfor a message should match an actual user's user_id Example: POST-ing this data:
-
+[https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user)
+Adds a new message to the database. Requires message, user_id. Example: POST-ing this data:
+```
 {
 	"message": "Here's an example message being submitted",
-	"image_url": "",
-	"user_id": 4
+	"user": "rdg242oihrg345oi3"
+	
 }
-will return you an HTTP status code of 200 and the following data:
+```
 
+#### POST one message of ANONYMOUSLY
+
+[https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages)
+Adds a new message to the database. Requires message. Example: POST-ing this data:
+```
 {
-  "username": "John Doe", //username corresponding to the user_id
-  "message": "Here's an example message being submitted",
-  "date": "2021-11-06T12:07:39.507Z", //date is generated automatically
-  "image_url": "https://placedog.net/200",
-  "message_id": 9 //message_id is generated automatically
+	"message": "Here's an example message being submitted",
+	
+	
 }
+```
 
 #### DELETE one message by id
 
@@ -124,5 +126,5 @@ Deletes message whose message_id matches the ${id} provided in the URL. Returns 
 
 
 
-### Pagination of messages
+
 
