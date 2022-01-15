@@ -32,7 +32,7 @@ router.get('/get/user/:id', userController.getOneUser);
 // Delete :: to delete a user from users collection  /delete/user/:id
 
 // 61e2f1a9edd9663ae1303c47
-router.delete('/delete/user/:id', userController.deleteOneUser);
+router.get('/delete/user/:id', userController.deleteOneUser);
 
 
 
@@ -53,7 +53,7 @@ router.get('/getmessagesbyid/user/:user', messageController.getMessagesbyID)
 
 // 61e2d13d0654075c6920e108
 // 61e2cee2edd9663ae1303c3f
-router.delete('/deletemessage/message/:id', messageController.deleteOneMessage);
+router.get('/deletemessage/message/:id', messageController.deleteOneMessage);
 
 // // Update :: to update a message in messages collection  /update/message/:id	
 // router.get('/update/message/:id', messageController.updateOneMessage);
