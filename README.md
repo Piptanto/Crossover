@@ -69,7 +69,7 @@ Adds a new user to the database. Requires username (UNIQUE), password. profile_p
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
-| Get one message by ID | GET           | https://crossover-twitter.herokuapp.com/getmessages/message/:id|
+| Get one message by ID | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/message/:message](https://crossover-twitter.herokuapp.com/getmessagesbyid/message/:message)|
 | Create new message by user ID | POST          | [https://crossover-twitter.herokuapp.com/createmessages/user/:user](https://crossover-twitter.herokuapp.com/createmessages/user/:user) |
 | Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |
 | Delete message |   DELETE    | [https://crossover-twitter.herokuapp.com/deletemessage/message/:id](https://crossover-twitter.herokuapp.com/deletemessage/message/:id)  |
@@ -83,14 +83,15 @@ Returns all messages in the database as an array of objects.
 #### GET one message by id
 Returns message whose message_id matches the ${id} provided in the URL.
 
-**Example:** xxxxxxxxxxxxxx/xxxx/xxxx would return you:
+**Example:** https://crossover-twitter.herokuapp.com/getmessagesbyid/message/61e076116a18ac312b073b4f would return you:
 ```
 {
   "_id": "547456245245",
-  "message": "Trick served together birds ought Dory vest pages. There is only one Lord of the Ring.",
-  "user": "547456245245",                        // Provides the user ID
-  "timestamp": "2021-11-06T08:14:06.599Z",
-   "__v": 0
+  "message": "Math is incredible like I absolutely do not have time to watch a 2 hour movie but I have more than enough time to watch four 30 minute shows.",
+  "userId": "61e076796a18ac312b073b50",                        // Provides the user ID
+  "comment":[""],
+  "timestamp":"2000-01-01T00:00:00.000Z",
+
 }
 ```
 #### POST one message of a user
