@@ -72,24 +72,25 @@ getOneUser = async (req, res) => {
 
  }
  
- // to delete a user by Id  e.g. //_id 61e29a677481532338efd0eb
+ // to delete a user by Id  e.g. //_id 61e2f1a9edd9663ae1303c47
 deleteOneUser = async (req, res) => {
 
     console.log('req.params', req.params) 
     try {
            await User.findByIdAndDelete( req.params.id , function (err, docs) {
                 if (err) {
-                    console.log(err)
+                    console.log('err from delete',err)
                     // res.send(err)
                      res.send({id:1,success:false,Message:'User Not Found'})
                 }
                 else {
                     console.log("Removed doc : ", docs);
-                    res.send({success:'True',Message:'User Deleted'})
+                    res.send({success:true,Message:'User Deleted'})
                 }
-        } )
+        } ).clone()
      }
     catch (err) {
+        console.log('err from delete catch',err)
           res.send({id:1,success:false,Message:'User Not Found'})
     }
 }
