@@ -25,7 +25,7 @@
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all Users | GET           | [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get) |
-| Get one User by ID users | GET           | [http://xxxxxxxxxxxx/uxsers/${id} |
+| Get one User by ID users | GET           | [https://crossover-twitter.herokuapp.com/user/:id](https://crossover-twitter.herokuapp.com/user/:id)|
 | All messages belonging to one user | GET           | xxxxxxx/users/${id}/messages |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
@@ -90,7 +90,7 @@ will return you an HTTP status code of 200 and the following data:
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
 | List all messages | GET           | [https://crossover-twitter.herokuapp.com/getmessages](https://crossover-twitter.herokuapp.com/getmessages) |
-| ### GET one message by id | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
+| Get one message by id | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user)  |
 | Create new message | POST          | [https://crossover-twitter.herokuapp.com/createmessages](https://crossover-twitter.herokuapp.com/createmessages) |x
 | Delete message |   DELETE    | [xxxxxxxxxxx/messages/${id} DELETE](xxxxxxxxxxx/messages/${id} DELETE) |
 ### GET all messages
