@@ -50,42 +50,22 @@ Returns user whose user_id matches the ${id} provided in the URL as a single obj
    ```
 
 ### GET all messages belonging to one user
-URL	Method
-xxxxxxxx/users/${id}/messages	GET
-Returns all messages for a user whose user_id matches the ${id} provided in the URL.
-
-Example: xxxxxxxxxxx/users/2/messages would return you an array, with every element being a message object:
-
-[
-  {
-    "username": "Jane Doe",
-    "user_id": 2,
-    "message_id": 3,
-    "message": "Trick served together birds ought Dory vest pages. There is only one Lord of the Ring.",
-    "date": "2021-11-06T08:14:06.599Z",
-    "image_url": "http://placekitten.com/200/200"
-  }
-]
 
 ### POST one user
-URL	Method
-xxxxxxxx/users/	POST
-Adds a new user to the database. Requires username, email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
-
+[https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) 
+Adds a new user to the database. Requires username (UNIQUE), email, password. profile_picture can be left empty, and will provide https://placedog.net/200 by default. Example: POST-ing this data:
+```
 {
-	"username": "Lance Vance",
+	"username": "Lance Vance", //HAS TO BE UNIQUE!
 	"email": "lance@vance.com",
 	"password": "qwerty",
 	"profile_picture": ""
  }
+
+```
 will return you an HTTP status code of 200 and the following data:
 
-{
-  "user_id": 13, //id is generated automatically
-  "username": "Lance Vance",
-  "email": "lance@vance.com",
-  "profile_picture": "https://placedog.net/200"
-}
+
 ## messages
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
