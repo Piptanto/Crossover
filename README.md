@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-**1. Users ([click here][user])**
+**1. Users**
 
 * GET all users
 * GET one user by id
 * GET all messages belonging to one user
 * POST one user
-**/me - GET Random User**
+
 
 **2. Messages**
 
@@ -20,7 +20,7 @@
 
 
 
-## Users [user]
+## Users 
 
 | Function      | Method        | Link          |
 | ------------- | ------------- | ------------- |
@@ -29,7 +29,7 @@
 | All messages belonging to one user | GET           | [https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user](https://crossover-twitter.herokuapp.com/getmessagesbyid/user/:user) |
 | Create new user | POST           | [https://crossover-twitter.herokuapp.com/createuser](https://crossover-twitter.herokuapp.com/createuser) |
 
-#### GET all users
+ #### GET all users [user]
 Returns all users in the database as an array of objects.
 [https://crossover-twitter.herokuapp.com/get](https://crossover-twitter.herokuapp.com/get)
 
