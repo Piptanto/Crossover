@@ -67,15 +67,38 @@ getOneUser = async (req, res) => {
         else res.send({ success: false })
     }  
     catch (err) {
-        res.send({id:1,success:false})
+        res.send({id:1,success:false,Message:'User Not Found'})
     }
 
  }
  
+ // to delete a user by Id  e.g. //_id 61e29a677481532338efd0eb
+deleteOneUser = async (req, res) => {
+
+    console.log('req.params', req.params) 
+    try {
+            User.findByIdAndDelete( req.params.id , function (err, docs) {
+                if (err) {
+                    console.log(err)
+                    // res.send(err)
+                     res.send({id:1,success:false,Message:'User Not Found'})
+                }
+                else {
+                    console.log("Removed doc : ", docs);
+                    res.send({success:'True',Message:'User Deleted'})
+                }
+        } )
+     }
+    catch (err) {
+          res.send({id:1,success:false,Message:'User Not Found'})
+    }
+}
+
 
 
 module.exports = {
     getUsers,
     createUsers,
-    getOneUser
+    getOneUser,
+    deleteOneUser
 }

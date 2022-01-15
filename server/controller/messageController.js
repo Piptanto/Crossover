@@ -3,7 +3,7 @@
 const Message = require('../models/MessageSchema')
 
 
-// to get all users
+// to get all messages
 getMessages = async (req, res) => {
     
     const messageData = await Message.find();
@@ -13,7 +13,7 @@ getMessages = async (req, res) => {
 }
 
 
-// to create User
+// to create a Message
 createMessages = async (req, res) => {
     
     let NewMessage = new Message(req.body)
@@ -50,12 +50,63 @@ getMessagesbyID = async (req, res) => {
     else res.send({success:false})
 
 
- }
+}
+ 
+// to delete a message by Id  e.g. //_id 61e0a42c5e7aa5e9be9ccf7e
+deleteOneMessage = async (req, res) => {
+
+    console.log('req.params', req.params) 
+    try {
+           await Message.findByIdAndDelete( req.params.id , function (err, docs) {
+                if (err) {
+                    console.log(err)
+                    // res.send(err)
+                     res.send({id:1,success:false,Message:'Message ID Wrong'})
+                }
+                else {
+                    console.log("Removed Message : ", docs);
+                    res.send({success:'True',Message:'Message Deleted'})
+                }
+        } )
+     }
+    catch (err) {
+          res.send({id:1,success:false,Message:'User Not Found'})
+    }
+}
+
+// // Update :: to update a message in messages collection  /update/message/:id
+// updateOneMessage = async (req, res) => { 
+
+//     console.log('req.params', req.params) 
+//     console.log('Data from Client: ', req.body)  
+
+//     try {
+//          await Message.findByIdAndUpdate(
+//             { _id: req.params.id }   // 1st argument giving id of the object needs to be updated
+//             ,{
+//                 visited:"true"
+//             },      // 2nd argument what needs to be updated
+//             { new: true }
+//         )
+//         .then(item => {
+//             res.send(item);
+//             console.log('Params id: ', req.params)
+//             console.log('Updated Doc: ' , item)
+                  
+//          // console.log('req.body.name: ',req.body.name)   
+//         })
+//     }
+//     catch (err) {
+        
+//     }
+// }
 
 module.exports = {
     getMessages,
     createMessages,
-    getMessagesbyID
+    getMessagesbyID,
+    deleteOneMessage,
+    // updateOneMessage
 }
 
 
